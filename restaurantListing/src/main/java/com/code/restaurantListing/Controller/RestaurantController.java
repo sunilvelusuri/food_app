@@ -26,10 +26,9 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantService.getAllRestaurants(),HttpStatus.OK);
     }
 
-
     @PostMapping("/addRestaurant")
     public ResponseEntity<RestaurantDto> addRestaurant(@RequestBody RestaurantDto restaurantDto){
-        System.out.println(restaurantDto.getId());
+        System.out.println(restaurantDto);
         return new ResponseEntity<>(restaurantService.addRestaurant(restaurantDto), HttpStatus.CREATED);
     }
 

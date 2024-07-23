@@ -1,4 +1,4 @@
-package com.code.restaurantListing.entity;
+package com.code.userInfo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,17 +6,17 @@ import lombok.*;
 @Getter
 @Setter
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor          // for getting all restaurants
-@Table(name = "Restaurant")
+@Table(name = "User")
 @Entity
-public class Restaurant {
+public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String userName;
+    private String password;
     private String address;
     private String city;
-    private String restaurantDescription;
-
 }

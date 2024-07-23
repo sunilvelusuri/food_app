@@ -23,6 +23,6 @@ public class RestaurantMapper {
                 restaurant.getCity(),
                 restaurant.getRestaurantDescription()
         );
-        return restaurantDto;
+    return restaurantDto;
     }
 }
