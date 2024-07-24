@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
+
     private OrderService orderService;
 
     @PostMapping("/saveOrder")
     public ResponseEntity<OrderDto> saveOrder(@RequestBody OrderDtoFromFE orderDetails){
         OrderDto savedOrderDto = orderService.saveOrderInDb(orderDetails);
-        System.out.println(savedOrderDto);
         return new ResponseEntity<>(savedOrderDto, HttpStatus.CREATED);
     }
 }

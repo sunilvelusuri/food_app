@@ -6,7 +6,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface OrderService {
-
-
     OrderDto saveOrderInDb(OrderDtoFromFE orderDetails);
 }
