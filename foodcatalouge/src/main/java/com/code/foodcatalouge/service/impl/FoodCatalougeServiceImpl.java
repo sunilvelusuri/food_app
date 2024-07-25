@@ -41,7 +41,6 @@ public class FoodCatalougeServiceImpl implements FoodCatalougeService{
     }
 
     private List<FoodItem> fetchFoodItemList(Integer restaurantId) {
-        System.out.println("In private method id : " + restaurantId);
         return foodItemRepository.findByRestaurantId(restaurantId);
     }
 
