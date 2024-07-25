@@ -7,8 +7,6 @@ import com.code.foodcatalouge.entity.FoodItem;
 import com.code.foodcatalouge.mapper.FoodItemMapper;
 import com.code.foodcatalouge.repository.FoodItemRepository;
 import com.code.foodcatalouge.service.FoodCatalougeService;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
