@@ -5,7 +5,6 @@ import { HeaderRoutingModule } from './header-routing.module';
 import { HeaderComponent } from './component/header.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent

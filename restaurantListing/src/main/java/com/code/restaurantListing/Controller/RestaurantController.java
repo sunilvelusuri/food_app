@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/restaurant")
+@CrossOrigin
 //@AllArgsConstructor
 public class RestaurantController {
     private RestaurantService restaurantService;
