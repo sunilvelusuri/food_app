@@ -28,7 +28,6 @@ export class FoodCatalougeComponent {
     this.route.paramMap.subscribe(params => {
       // this.restaurantId = +params.get('id');
       this.restaurantId = +(params.get('id') ?? 0)
-      // console.log("init : " + this.restaurantId);
     });
 
     this.getFoodItemsByRestaurant(this.restaurantId);
@@ -83,7 +82,7 @@ export class FoodCatalougeComponent {
     }
     this.orderSummary.foodItemList = this.foodItemCart;
     this.orderSummary.restaurant = this.foodItemResponse.restaurant;
-    this.router.navigate(['/orderSummary'], { queryParams: { data: JSON.stringify(this.orderSummary) } });
+    this.router.navigate(['/order-summary'], { queryParams: { data: JSON.stringify(this.orderSummary) } });
   }
 
 }

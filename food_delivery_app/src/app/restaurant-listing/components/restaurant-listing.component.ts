@@ -37,9 +37,6 @@ export class RestaurantListingComponent {
   }
 
   onButtonClick(id: number | undefined) {
-    
-    console.log("Restaurant id : " + id);
-    
     this.router.navigate(['/food-catalouge', id]);
   }
 
