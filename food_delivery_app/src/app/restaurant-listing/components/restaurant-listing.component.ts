@@ -37,10 +37,10 @@ export class RestaurantListingComponent {
   }
 
   onButtonClick(id: number | undefined) {
-
-    if(id == undefined) return;
-
-    this.router.navigate(['/api/foodCatalouge', id]);
+    
+    console.log("Restaurant id : " + id);
+    
+    this.router.navigate(['/food-catalouge', id]);
   }
 
 }

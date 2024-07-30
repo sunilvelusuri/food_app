@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/foodCatalouge")
 @AllArgsConstructor
+@CrossOrigin
 public class FoodCatalougeController {
 
     private FoodCatalougeService foodCatalougeService;
 
-    @GetMapping("/{restaurantId}")
+    @GetMapping("fetchFoodItemsByResId/{restaurantId}")
     public ResponseEntity<FoodCatalougePage> fetchRestaurantWithFoodMenu(@PathVariable Integer restaurantId){
         FoodCatalougePage foodCatalougePage = foodCatalougeService.fetchFoodCatalougePageDetails(restaurantId);
         return new ResponseEntity<>(foodCatalougePage, HttpStatus.OK);
@@ -25,6 +26,4 @@ public class FoodCatalougeController {
     public ResponseEntity<FoodItemDto> addFoodItem(@RequestBody FoodItemDto foodItemDto){
         return new ResponseEntity<>(foodCatalougeService.addFoodItem(foodItemDto), HttpStatus.CREATED);
     }
-
-
 }
