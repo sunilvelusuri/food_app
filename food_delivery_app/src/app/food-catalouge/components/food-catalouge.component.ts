@@ -26,7 +26,6 @@ export class FoodCatalougeComponent {
   ngOnInit(){
 
     this.route.paramMap.subscribe(params => {
-      // this.restaurantId = +params.get('id');
       this.restaurantId = +(params.get('id') ?? 0)
     });
 
