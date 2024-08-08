@@ -3,7 +3,8 @@
   <div class="restaurant-grid">
       <div class="restaurant-card" *ngFor="let restaurant of restaurantList">
         <div class="restaurant-image">
-          <img [src]="'assets/restaurant-pics/' + getRandomImage()" alt= "restaurant {{restaurant.id}}">
+          <img [src]="'assets/restaurant-pics/'+getRandomImage()" alt= "restaurant {{restaurant.id}}">
+          <!-- <img src="8.jpg" alt="restaurant {{restaurant.id}}"> -->
         </div>
         <div class="restaurant-details">
           <h3 class="restaurant-name">{{restaurant.name}}</h3>

@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodcatalougeapp
+  labels:
+    app: foodcatalougeapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foodcatalougeapp
+  template:
+    metadata:
+      labels:
+        app: foodcatalougeapp
+    spec:
+      containers:
+        - name: foodcatalougeapp
+          image: sunilkumar633/foodcatalouge-service:latest
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8082
+          env: 
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom: 
+                secretKeyRef: 
+                  name: secret
+                  key: mysql-username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom: 
+                secretKeyRef: 
+                  name: secret
+                  key: mysql-password
+            - name: SPRING_DATASOURCE_URL
+              valueFrom: 
+                configMapKeyRef: 
+                  name: configmap
+                  key: foodcatalougedb_url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: foodcatalouge-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
+  selector:
+    app: foodcatalougeapp
+
+            
+            
+
+
+
+
