@@ -36,6 +36,15 @@ export class RestaurantListingComponent {
     return `${randomIndex}.jpg`; 
   }
 
+  getRandomRating(min: 600, max: 900): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+//   window.onload = function() {
+//     const randomNumber = getRandomRating();
+//     document.getElementById('randomNumberSpan').textContent = randomNumber;
+// };
+
   onButtonClick(id: number | undefined) {
     this.router.navigate(['/food-catalouge', id]);
   }
