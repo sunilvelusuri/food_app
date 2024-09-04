@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: aws-ingress
+  name: i
   #namespace: argocd
   annotations:
     kubernetes.io/ingress.class: alb
@@ -10,6 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
 spec:
   rules:
+
     - http:
         paths:
           - path: /
@@ -51,6 +52,48 @@ spec:
                 name: order-service
                 port:
                   number: 8083
+
+    # - https:
+    #     paths:
+    #       - path: /
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: angular-service
+    #             port:
+    #               number: 80
+
+    #       - path: /api/restaurant
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: restaurant-service
+    #             port:
+    #               number: 8080
+          
+    #       - path: /api/user
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: user-service
+    #             port:
+    #               number: 8081
+
+    #       - path: /api/foodCatalouge
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: foodcatalouge-service
+    #             port:
+    #               number: 8082
+
+    #       - path: /api/order
+    #         pathType: Prefix
+    #         backend:
+    #           service:
+    #             name: order-service
+    #             port:
+    #               number: 8083
 
 
           

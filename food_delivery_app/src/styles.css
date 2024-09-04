@@ -3,8 +3,10 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+
+
 .restaurant-grid {
-  display: grid;
+  display: flexbox;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
   grid-gap: 20px;
 }
@@ -67,7 +69,8 @@
 
 
 .header {
-  background-color: #00A7E1;
+  /* background-color: #00A7E1; */
+  background-color: #7a0a55;
   color: #fff;
   padding: 20px 0;
 }
@@ -108,25 +111,6 @@
 
 .header-nav a:hover {
   color: #E7F9FF;
-}
-
-@media only screen and (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-nav {
-    margin-top: 20px;
-  }
-
-  .header-nav ul {
-    display: block;
-  }
-
-  .header-nav li {
-    margin: 10px 0;
-  }
 }
 
 

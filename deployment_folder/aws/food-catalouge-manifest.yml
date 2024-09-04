@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: foodcatalougeapp
-          image: sunilkumar633/foodcatalouge-service:latest
+          # image: sunilkumar633/foodcatalouge-service:latest
+          image: sunilkumar633/foodcatalouge-service:0.2.2
           imagePullPolicy: Always
           ports: 
             - containerPort: 8082

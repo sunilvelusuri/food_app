@@ -804,7 +804,7 @@ spec:
       - args:
         - --cluster-name=aws-eks-cluster
         - --ingress-class=alb
-        - --aws-vpc-id=vpc-0908d919c2be0b7c7    # change it to your cluster vpc
+        - --aws-vpc-id=vpc-0e5aba69d76eebbc7    # change it to your cluster vpc
         - --aws-region=us-east-2
 
         # image: public.ecr.aws/eks/aws-load-balancer-controller:v2.4.7

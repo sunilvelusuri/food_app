@@ -45,7 +45,7 @@ export class FoodCatalougeComponent {
   increment(food: any) {
     food.quantity++;
     const index = this.foodItemCart.findIndex(item => item.id === food.id);
-    if (index === -1) {
+    if (index === -1 && index < 6) {
       this.foodItemCart.push(food);
     } else {
       this.foodItemCart[index] = food;
@@ -79,9 +79,14 @@ export class FoodCatalougeComponent {
         restaurantDescription: "No data"
       }
     }
+    console.log(this.foodItemCart.length);
+    if(this.foodItemCart.length != 0){
     this.orderSummary.foodItemList = this.foodItemCart;
     this.orderSummary.restaurant = this.foodItemResponse.restaurant;
     this.router.navigate(['/order-summary'], { queryParams: { data: JSON.stringify(this.orderSummary) } });
+    }else{
+      alert("No item is selected")
+    }
   }
 
 }

@@ -31,7 +31,7 @@ export class RestaurantListingComponent {
   }
 
   getRandomImage(): string {
-    const imageCount = 4; 
+    const imageCount = 8; 
     const randomIndex = this.getRandomNumber(1, imageCount);
     return `${randomIndex}.jpg`; 
   }

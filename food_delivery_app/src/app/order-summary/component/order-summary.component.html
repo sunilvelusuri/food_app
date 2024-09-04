@@ -14,11 +14,15 @@
           <td>{{ item.quantity }}</td>
           <td>&#x20b9; {{ item.price }}</td>
         </tr>
+        <tr>
+          <td colspan="2">gst</td>
+          <td>{{ (total * 0.05).toFixed(2) }} </td>
+        </tr>
       </tbody>
       <tfoot>
         <tr>
           <td colspan="2">Total</td>
-          <td>&#x20b9; {{ total }}</td>
+          <td>&#x20b9; {{ total + (total * 0.05) }}</td>
         </tr>
       </tfoot>
     </table>

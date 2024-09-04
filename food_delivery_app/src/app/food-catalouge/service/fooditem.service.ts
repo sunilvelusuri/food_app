@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-// import { API_URL_FC } from "../../constants/url";
+import { API_URL_FC } from "../../constants/url";
 import { k8ExternalIp } from "../../constants/url";
 
 @Injectable({
@@ -10,7 +10,7 @@ import { k8ExternalIp } from "../../constants/url";
 })
 export class FoodItemService {
 
-    private apiUrl = '/api/foodCatalouge/fetchFoodItemsByResId/';
+    private apiUrl = API_URL_FC+'/api/foodCatalouge/fetchFoodItemsByResId/';
     // private apiUrl = k8ExternalIp+'/api/foodCatalouge/fetchFoodItemsByResId/';
 
     constructor(private http: HttpClient) { }
@@ -21,7 +21,7 @@ export class FoodItemService {
             catchError(this.handleError)
           );
     }
-    
+
     private handleError(error: any) {
     console.error('An error occurred:', error);
     return throwError(error.message || error);
